@@ -2,13 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "implementations", "implementations", "{960B990D-B96C-8BF2-4DC4-C97CD8288A26}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{FF88E2E8-FDEE-1E64-7699-714C7D6BBC18}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8E39B3A-60FB-6324-D326-DF008F5EC2EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoZstd", "implementations\csharp\src\ProtoZstd\ProtoZstd.csproj", "{6335CC0D-5286-5E63-6AD3-07A3A36AD036}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeroc", "src\Zeroc\Zeroc.csproj", "{6335CC0D-5286-5E63-6AD3-07A3A36AD036}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,8 +21,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FF88E2E8-FDEE-1E64-7699-714C7D6BBC18} = {960B990D-B96C-8BF2-4DC4-C97CD8288A26}
-		{D8E39B3A-60FB-6324-D326-DF008F5EC2EB} = {FF88E2E8-FDEE-1E64-7699-714C7D6BBC18}
 		{6335CC0D-5286-5E63-6AD3-07A3A36AD036} = {D8E39B3A-60FB-6324-D326-DF008F5EC2EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
