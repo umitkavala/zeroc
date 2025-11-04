@@ -1,0 +1,24 @@
+# Include essential documentation
+include README.md
+include LICENSE
+include CHANGELOG.md
+
+# Include package metadata
+include pyproject.toml
+include setup.py
+
+# Include type stubs
+recursive-include zeroc *.py
+recursive-include zeroc *.pyi
+include zeroc/py.typed
+
+# Exclude development and build artifacts
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude *.so
+global-exclude .DS_Store
+prune tests
+prune .pytest_cache
+prune htmlcov
+prune .mypy_cache
+prune .ruff_cache

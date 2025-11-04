@@ -1,0 +1,128 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install UV
+      run: |
+        pip install uv
+
+    - name: Install dependencies
+      run: |
+        uv pip install --system protobuf zstandard numpy grpcio-tools crc32c
+
+    - name: Compile protobuf schemas
+      run: |
+        cd prototype
+        python -m grpc_tools.protoc --proto_path=. --python_out=. api_schemas.proto
+      shell: bash
+
+    - name: Test imports
+      run: |
+        python -c "import zstandard; print('zstandard:', zstandard.__version__)"
+        python -c "import google.protobuf; print('protobuf:', google.protobuf.__version__)"
+        python -c "from implementations.python.zeroc import encode_frame, decode_frame; print('zeroc: OK')"
+      shell: bash
+
+    - name: Run prototype benchmark (smoke test)
+      run: |
+        cd prototype
+        python data_generator.py
+      shell: bash
+      timeout-minutes: 5
+
+  lint:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install uv
+        uv pip install --system ruff pyright types-protobuf
+
+    - name: Lint with ruff
+      run: |
+        ruff check implementations/python/zeroc/ prototype/ benchmarks/ --line-length 100
+      continue-on-error: true
+
+    - name: Type check with pyright
+      run: |
+        pyright implementations/python/zeroc/
+      continue-on-error: true
+
+  benchmark:
+    name: Run Benchmarks
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install uv
+        uv pip install --system protobuf zstandard numpy grpcio-tools crc32c
+
+    - name: Compile protobuf schemas
+      run: |
+        cd prototype
+        python -m grpc_tools.protoc --proto_path=. --python_out=. api_schemas.proto
+
+    - name: Run comprehensive benchmark
+      run: |
+        python benchmarks/comprehensive_benchmark.py > benchmarks/results-ci.txt
+      timeout-minutes: 15
+
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: benchmark-results
+        path: benchmarks/results-ci.txt
+        retention-days: 30
+
+    - name: Comment benchmark results on commit
+      if: github.event_name == 'push'
+      run: |
+        echo "## Benchmark Results" > comment.md
+        echo '```' >> comment.md
+        tail -50 benchmarks/results-ci.txt >> comment.md
+        echo '```' >> comment.md
+        cat comment.md
+      continue-on-error: true
