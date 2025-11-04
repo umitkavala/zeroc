@@ -1,0 +1,13 @@
+{
+  "schema": "ecommerce.v1.Order",
+  "version": "1.0.0",
+  "dictionary_id": "0x6b2f8960",
+  "created": "2025-11-04T12:39:21Z",
+  "size": 102532,
+  "sha256": "3450482fe335c1c134a61c8cd53180658162c15970b9f78da6cffa6d64e702be",
+  "training": {
+    "sample_count": 10000,
+    "compression_level": 3,
+    "dict_size": 102400
+  }
+}

@@ -1,0 +1,16 @@
+
+================================================================================
+                         ZEROC OPTIMIZATION
+================================================================================
+
+Finding optimal dictionary configuration to maximize compression
+while maintaining sub-millisecond latency.
+
+Traceback (most recent call last):
+  File "/Users/umitkavala/Documents/code/compress/benchmarks/optimized_benchmark.py", line 257, in <module>
+    main()
+    ~~~~^^
+  File "/Users/umitkavala/Documents/code/compress/benchmarks/optimized_benchmark.py", line 243, in main
+    results, best = benchmark.configurations("order")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OptimizedBenchmark' object has no attribute 'configurations'

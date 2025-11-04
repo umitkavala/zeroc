@@ -1,0 +1,173 @@
+
+================================================================================
+                    ZEROC COMPREHENSIVE BENCHMARKS
+================================================================================
+
+Comparing 5 compression approaches:
+  1. Raw JSON (baseline)
+  2. JSON + gzip
+  3. Protobuf (binary)
+  4. Protobuf + gzip
+  5. Zeroc (protobuf + zstd + trained dictionary)
+
+
+============================================================
+Benchmarking: ORDER
+============================================================
+Generating 10,000 samples...
+
+  Benchmarking Raw JSON...
+
+  Benchmarking JSON + gzip...
+
+  Benchmarking Protobuf...
+
+  Benchmarking Protobuf + gzip...
+
+  Benchmarking Zeroc (proto + zstd + dict)...
+
+================================================================================
+RESULTS: ORDER
+================================================================================
+
+PAYLOAD SIZES:
+Approach                           Avg Size  vs Baseline    Reduction
+--------------------------------------------------------------------------------
+Raw JSON                            356.0B        1.00x         0.0%
+JSON + gzip                         244.0B        1.46x        31.5%
+Protobuf                            113.5B        3.14x        68.1%
+Protobuf + gzip                     128.5B        2.77x        63.9%
+Zeroc (proto + zstd + dict)          75.8B        4.70x        78.7%
+
+ENCODE LATENCY (milliseconds):
+Approach                              p50        p95        p99
+--------------------------------------------------------------------------------
+Raw JSON                           0.002      0.002      0.002
+JSON + gzip                        0.007      0.007      0.010
+Protobuf                           0.001      0.001      0.002
+Protobuf + gzip                    0.005      0.005      0.005
+Zeroc (proto + zstd + dict)        0.002      0.002      0.002
+
+DECODE LATENCY (milliseconds):
+Approach                              p50        p95        p99
+--------------------------------------------------------------------------------
+Raw JSON                           0.001      0.002      0.002
+JSON + gzip                        0.004      0.004      0.004
+Protobuf                           0.000      0.000      0.000
+Protobuf + gzip                    0.001      0.001      0.002
+Zeroc (proto + zstd + dict)        0.001      0.001      0.001
+
+KEY INSIGHTS:
+  • Zeroc is 3.22x smaller than JSON+gzip
+  • Zeroc encodes 4.62x faster than JSON+gzip
+  • Zeroc decodes 4.43x faster than JSON+gzip
+  • Bandwidth saved: 68.9%
+
+============================================================
+Benchmarking: PRODUCT_VIEW
+============================================================
+Generating 10,000 samples...
+
+  Benchmarking Raw JSON...
+
+  Benchmarking JSON + gzip...
+
+  Benchmarking Protobuf...
+
+  Benchmarking Protobuf + gzip...
+
+  Benchmarking Zeroc (proto + zstd + dict)...
+
+================================================================================
+RESULTS: PRODUCTVIEW
+================================================================================
+
+PAYLOAD SIZES:
+Approach                           Avg Size  vs Baseline    Reduction
+--------------------------------------------------------------------------------
+Raw JSON                            108.8B        1.00x         0.0%
+JSON + gzip                         109.3B        1.00x        -0.4%
+Protobuf                             28.6B        3.80x        73.7%
+Protobuf + gzip                      48.7B        2.24x        55.3%
+Zeroc (proto + zstd + dict)          46.5B        2.34x        57.3%
+
+ENCODE LATENCY (milliseconds):
+Approach                              p50        p95        p99
+--------------------------------------------------------------------------------
+Raw JSON                           0.001      0.001      0.001
+JSON + gzip                        0.004      0.005      0.006
+Protobuf                           0.000      0.001      0.001
+Protobuf + gzip                    0.003      0.003      0.003
+Zeroc (proto + zstd + dict)        0.001      0.001      0.001
+
+DECODE LATENCY (milliseconds):
+Approach                              p50        p95        p99
+--------------------------------------------------------------------------------
+Raw JSON                           0.001      0.001      0.001
+JSON + gzip                        0.003      0.003      0.004
+Protobuf                           0.000      0.000      0.000
+Protobuf + gzip                    0.001      0.001      0.001
+Zeroc (proto + zstd + dict)        0.001      0.001      0.001
+
+KEY INSIGHTS:
+  • Zeroc is 2.35x smaller than JSON+gzip
+  • Zeroc encodes 4.40x faster than JSON+gzip
+  • Zeroc decodes 4.63x faster than JSON+gzip
+  • Bandwidth saved: 57.4%
+
+============================================================
+Benchmarking: SEARCH
+============================================================
+Generating 10,000 samples...
+
+  Benchmarking Raw JSON...
+
+  Benchmarking JSON + gzip...
+
+  Benchmarking Protobuf...
+
+  Benchmarking Protobuf + gzip...
+
+  Benchmarking Zeroc (proto + zstd + dict)...
+
+================================================================================
+RESULTS: SEARCHREQUEST
+================================================================================
+
+PAYLOAD SIZES:
+Approach                           Avg Size  vs Baseline    Reduction
+--------------------------------------------------------------------------------
+Raw JSON                            120.7B        1.00x         0.0%
+JSON + gzip                         119.8B        1.01x         0.7%
+Protobuf                             39.8B        3.03x        67.0%
+Protobuf + gzip                      58.7B        2.06x        51.4%
+Zeroc (proto + zstd + dict)          47.1B        2.56x        61.0%
+
+ENCODE LATENCY (milliseconds):
+Approach                              p50        p95        p99
+--------------------------------------------------------------------------------
+Raw JSON                           0.001      0.001      0.001
+JSON + gzip                        0.005      0.007      0.007
+Protobuf                           0.001      0.001      0.001
+Protobuf + gzip                    0.003      0.004      0.005
+Zeroc (proto + zstd + dict)        0.001      0.001      0.001
+
+DECODE LATENCY (milliseconds):
+Approach                              p50        p95        p99
+--------------------------------------------------------------------------------
+Raw JSON                           0.001      0.001      0.001
+JSON + gzip                        0.003      0.003      0.004
+Protobuf                           0.000      0.000      0.000
+Protobuf + gzip                    0.001      0.001      0.001
+Zeroc (proto + zstd + dict)        0.001      0.001      0.001
+
+KEY INSIGHTS:
+  • Zeroc is 2.54x smaller than JSON+gzip
+  • Zeroc encodes 5.00x faster than JSON+gzip
+  • Zeroc decodes 5.05x faster than JSON+gzip
+  • Bandwidth saved: 60.7%
+
+================================================================================
+                         BENCHMARKS COMPLETE!
+================================================================================
+

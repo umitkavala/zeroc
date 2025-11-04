@@ -1,0 +1,201 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pyright
+pyrightconfig.json
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+.classpath
+.project
+.settings/
+bin/
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+# Node/JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+dist/
+coverage/
+*.tsbuildinfo
+.npm
+.eslintcache
+
+# C#
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Protobuf compiled files (keep in repo for convenience)
+# Uncomment if you want to regenerate:
+# *_pb2.py
+# *_pb2.pyi
+
+# Benchmark results (optional - keep for documentation)
+# Uncomment to ignore:
+# benchmarks/results.txt
+# benchmarks/optimization_results.txt
+
+# Trained dictionaries (keep in repo)
+# These are important artifacts
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Editor backup files
+*~
+\#*\#
+.#*
+
+# Documentation build artifacts
+docs/_build/
+site/
+
+# Package files
+*.tar.gz
+*.zip
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment files with secrets
+.env.local
+.env.*.local
+credentials.json
+secrets.yaml
+
+# Large files / data
+*.csv
+*.json.gz
+large_dataset/
