@@ -14,8 +14,8 @@
     <Description>Zeroc: High-Performance API Compression Protocol - C# Implementation</Description>
     <PackageTags>compression;protobuf;zstd;api;performance</PackageTags>
     <RootNamespace>Umitkavala.Zeroc</RootNamespace>
-    <PackageProjectUrl>https://github.com/umitkavala/compress</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/umitkavala/compress.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/umitkavala/zeroc</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/umitkavala/zeroc.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

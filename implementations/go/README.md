@@ -22,7 +22,7 @@ Go implementation of the Zeroc compression protocol.
 ## Installation
 
 ```bash
-go get github.com/umitkavala/compress/implementations/go/zeroc
+go get github.com/umitkavala/zeroc/implementations/go/zeroc
 ```
 
 ## Dependencies
@@ -37,7 +37,7 @@ go get google.golang.org/protobuf
 ### Wire Format
 
 ```go
-import "github.com/umitkavala/compress/implementations/go/zeroc"
+import "github.com/umitkavala/zeroc/implementations/go/zeroc"
 
 // Encode
 protoBytes := order.Marshal()
@@ -64,7 +64,7 @@ decompressed, err := zeroc.DecompressPayload(
 ### Dictionary Loader
 
 ```go
-import "github.com/umitkavala/compress/implementations/go/zeroc"
+import "github.com/umitkavala/zeroc/implementations/go/zeroc"
 
 // Load dictionary
 loader := zeroc.NewDictionaryLoader()
@@ -131,7 +131,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/umitkavala/compress/implementations/go/zeroc"
+    "github.com/umitkavala/zeroc/implementations/go/zeroc"
     pb "your/protobuf/package"
 )
 

@@ -12,7 +12,7 @@ This directory contains implementations of Zeroc in various programming language
 |----------|--------|---------|------|
 | **Python** | ✅ Complete | `umitkavala-zeroc` | [README](python/README.md) |
 | **Java** | 🚧 Skeleton | `io.github.umitkavala:zeroc` | [README](java/README.md) |
-| **Go** | 🚧 Skeleton | `github.com/umitkavala/compress/implementations/go/zeroc` | [README](go/README.md) |
+| **Go** | 🚧 Skeleton | `github.com/umitkavala/zeroc/implementations/go/zeroc` | [README](go/README.md) |
 | **JavaScript** | 🚧 Skeleton | `@umitkavala/zeroc` | [README](javascript/README.md) |
 | **C#** | 🚧 Skeleton | `Umitkavala.Zeroc` | [README](csharp/README.md) |
 

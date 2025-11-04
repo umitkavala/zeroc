@@ -1,4 +1,4 @@
-module github.com/umitkavala/compress/implementations/go
+module github.com/umitkavala/zeroc/implementations/go
 
 go 1.22
 

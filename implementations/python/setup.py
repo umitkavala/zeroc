@@ -15,7 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Zeroc Contributors",
-    url="https://github.com/umitkavala/compress",
+    url="https://github.com/umitkavala/zeroc",
     packages=find_packages(exclude=["tests", "examples"]),
     python_requires=">=3.8",
     install_requires=[

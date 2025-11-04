@@ -12,7 +12,7 @@
 
     <name>Zeroc Java</name>
     <description>Zeroc: High-Performance API Compression Protocol - Java Implementation</description>
-    <url>https://github.com/umitkavala/compress</url>
+    <url>https://github.com/umitkavala/zeroc</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -41,13 +41,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/umitkavala/compress.git",
+    "url": "https://github.com/umitkavala/zeroc.git",
     "directory": "implementations/javascript"
   },
   "bugs": {
-    "url": "https://github.com/umitkavala/compress/issues"
+    "url": "https://github.com/umitkavala/zeroc/issues"
   },
-  "homepage": "https://github.com/umitkavala/compress/tree/main/implementations/javascript",
+  "homepage": "https://github.com/umitkavala/zeroc/tree/main/implementations/javascript",
   "dependencies": {},
   "peerDependencies": {
     "fzstd": "^0.1.0"
