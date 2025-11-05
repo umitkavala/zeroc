@@ -6,7 +6,12 @@ import random
 import time
 from typing import Any, List, Dict
 import numpy as np
-from numpy.typing import NDArray
+
+# Python 3.8 compatibility
+try:
+    from numpy.typing import NDArray
+except ImportError:
+    NDArray = np.ndarray  # type: ignore
 
 
 class DataGenerator:
@@ -48,7 +53,7 @@ class DataGenerator:
         # Start timestamp (Jan 1, 2024)
         self.base_timestamp = int(time.mktime(time.strptime("2024-01-01", "%Y-%m-%d")))
 
-    def _generate_zipfian(self, n: int, alpha: float) -> NDArray[np.floating[Any]]:
+    def _generate_zipfian(self, n: int, alpha: float) -> NDArray:  # type: ignore[type-arg]
         """Generate Zipfian distribution for realistic product popularity."""
         ranks = np.arange(1, n + 1)
         probabilities = 1.0 / (ranks ** alpha)
