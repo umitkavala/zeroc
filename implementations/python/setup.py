@@ -10,7 +10,7 @@ long_description = readme_path.read_text(encoding="utf-8") if readme_path.exists
 
 setup(
     name="umitkavala-zeroc",
-    version="1.0.1",
+    version="1.0.2",
     description="Zeroc: High-Performance API Compression Protocol",
     long_description=long_description,
     long_description_content_type="text/markdown",
