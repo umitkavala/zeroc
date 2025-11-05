@@ -5,6 +5,15 @@ All notable changes to the Zeroc Python implementation will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-11-05
+
+### Fixed
+- Added LICENSE file to package distribution for PyPI compliance
+- Simplified author metadata in pyproject.toml for better PyPI compatibility
+
+### Changed
+- Updated package metadata configuration
+
 ## [1.0.0] - 2024-11-04
 
 ### Added
@@ -41,4 +50,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - zstandard >= 0.21.0
 - crc32c >= 2.3
 
+[1.0.1]: https://github.com/umitkavala/zeroc/releases/tag/v1.0.1
 [1.0.0]: https://github.com/umitkavala/zeroc/releases/tag/v1.0.0
